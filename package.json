@@ -1,0 +1,24 @@
+{
+  "name": "nodecopter",
+  "version": "0.0.1",
+  "description": "A Command line utility for nodecopter",
+  "main": "index.js",
+  "repository": "",
+  "keywords": [
+    "nodecopter"
+  ],
+  "author": "Andrew Nesbitt",
+  "license": "MIT",
+  "readmeFilename": "Readme.md",
+  "dependencies": {
+    "ar-drone": "~0.0.5",
+    "commander": "~1.1.1"
+  },
+  "bin": {
+    "nodecopter": "./bin/nodecopter"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

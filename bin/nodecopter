@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+
+program
+  .version('0.0.1')
+  .command('config', 'show current config')
+  .command('demo', 'perform a scripted demo')
+  .command('land', 'bring the nodecopter to the ground')
+  .command('repl', 'interactive repl')
+  .command('reset', 'recover from emergency')
+  .command('status', 'show current status details')
+  .command('telnet', 'connect directly to the nodecopter')
+  .command('trim', 'flatten trim')
+
+program.parse(process.argv)
