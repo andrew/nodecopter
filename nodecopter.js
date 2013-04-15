@@ -1,4 +1,11 @@
+var arDrone = require('ar-drone');
+var constants = require('ar-drone/lib/constants')
+
 var Nodecopter = {
+  createClient: function(options){
+    return arDrone.createClient(options)
+  },
+  defaultIP: constants.DEFAULT_DRONE_IP,
   config: function(options){
     console.log('config')
   },
