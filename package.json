@@ -12,7 +12,8 @@
   "readmeFilename": "Readme.md",
   "dependencies": {
     "ar-drone": "~0.0.5",
-    "commander": "~1.1.1"
+    "commander": "~1.1.1",
+    "prettyjson": "~0.8.1"
   },
   "bin": {
     "nodecopter": "./bin/nodecopter"

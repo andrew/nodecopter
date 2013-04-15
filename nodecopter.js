@@ -1,14 +1,13 @@
 var arDrone = require('ar-drone');
-var constants = require('ar-drone/lib/constants')
+var constants = require('ar-drone/lib/constants');
+var fs = require('fs');
+var prettyjson = require('prettyjson');
 
 var Nodecopter = {
   createClient: function(options){
     return arDrone.createClient(options)
   },
   defaultIP: constants.DEFAULT_DRONE_IP,
-  config: function(options){
-    console.log('config')
-  },
   demo: function(options){
     var client = Nodecopter.createClient(options);
     client.takeoff();
@@ -38,6 +37,25 @@ var Nodecopter = {
     var client = Nodecopter.createClient(options);
     console.log('Resetting...')
     client.disableEmergency()
+  },
+  config: function(options){
+    var config
+    fs.exists('./nodecopter.json', function (exists) {
+      if (exists){
+        config = require('./nodecopter.json')
+        console.log(prettyjson.render(config))
+      } else {
+        fs.exists('~/nodecopter.json', function (exists) {
+          if (exists){
+            config = require('~/nodecopter.json')
+          } else {
+            config = require('./defaults.json')
+          }
+          console.log(prettyjson.render(config))
+        });
+      }
+    });
+    
   },
   status: function(options){
     console.log('status')
