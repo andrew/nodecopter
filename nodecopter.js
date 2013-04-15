@@ -31,7 +31,8 @@ var Nodecopter = {
     },2000)
   },
   repl: function(options){
-    console.log('repl')
+    var client = Nodecopter.createClient(options);
+    client.createRepl();
   },
   reset: function(options){
     console.log('reset')
