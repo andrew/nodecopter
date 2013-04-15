@@ -1,16 +1,51 @@
 #!/usr/bin/env node
 
 var program = require('commander');
+var Nodecopter = require('../nodecopter');
 
 program
   .version('0.0.1')
-  .command('config', 'show current config')
-  .command('demo', 'perform a scripted demo')
-  .command('land', 'bring the nodecopter to the ground')
-  .command('repl', 'interactive repl')
-  .command('reset', 'recover from emergency')
-  .command('status', 'show current status details')
-  .command('telnet', 'connect directly to the nodecopter')
-  .command('trim', 'flatten trim')
+
+program
+  .command('config')
+  .description('show current config')
+  .action(Nodecopter.config)
+
+program
+  .command('demo')
+  .description('perform a scripted demo')
+  .action(Nodecopter.demo)
+
+program
+  .command('land')
+  .description('bring the nodecopter to the ground')
+  .action(Nodecopter.land)
+
+program
+  .command('repl')
+  .description('interactive repl')
+  .action(Nodecopter.repl)
+
+program
+  .command('reset')
+  .description('recover from emergency')
+  .action(Nodecopter.reset)
+
+program
+  .command('status')
+  .description('show current status details')
+  .action(Nodecopter.status)
+
+program
+  .command('telnet')
+  .description('connect directly to the nodecopter')
+  .action(Nodecopter.telnet)
+
+program
+  .command('trim')
+  .description('flatten trim')
+  .action(Nodecopter.trim)
 
 program.parse(process.argv)
+
+if (program.args.length === 0) program.help() 
