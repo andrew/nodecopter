@@ -1,13 +1,19 @@
 {
   "name": "nodecopter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Command line utility for nodecopter",
-  "main": "index.js",
-  "repository": "",
+  "main": "nodecopter.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrew/nodecopter.git"
+  },
   "keywords": [
-    "nodecopter"
+    "nodecopter", "cli"
   ],
-  "author": "Andrew Nesbitt",
+  "homepage": "https://github.com/andrew/nodecopter",
+  "bugs" :
+    { "url" : "https://github.com/andrew/nodecopter/issues" },
+  "author": "Andrew Nesbitt <andrewnez@gmail.com> (http://andrew.github.io)",
   "license": "MIT",
   "readmeFilename": "Readme.md",
   "dependencies": {
