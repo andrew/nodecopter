@@ -14,7 +14,6 @@ program
 program
   .command('config')
   .description('show current config')
-  .option(ipFlag, ipDesc, ipDefault)
   .action(Nodecopter.config)
 
 program
