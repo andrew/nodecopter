@@ -3,47 +3,60 @@
 var program = require('commander');
 var Nodecopter = require('../nodecopter');
 
+var ipFlag = '-i, --ip [address]'
+var ipDesc = 'IP address of drone ['+Nodecopter.defaultIP+']'
+var ipDefault = Nodecopter.defaultIP
+
 program
   .version('0.0.1')
+  .option(ipFlag, ipDesc, ipDefault)
 
 program
   .command('config')
   .description('show current config')
+  .option(ipFlag, ipDesc, ipDefault)
   .action(Nodecopter.config)
 
 program
   .command('demo')
   .description('perform a scripted demo')
+  .option(ipFlag, ipDesc, ipDefault)
   .action(Nodecopter.demo)
 
 program
   .command('land')
   .description('bring the nodecopter to the ground')
+  .option(ipFlag, ipDesc, ipDefault)
   .action(Nodecopter.land)
 
 program
   .command('repl')
   .description('interactive repl')
+  .option(ipFlag, ipDesc, ipDefault)
   .action(Nodecopter.repl)
 
 program
   .command('reset')
   .description('recover from emergency')
+  .option(ipFlag, ipDesc, ipDefault)
   .action(Nodecopter.reset)
 
 program
   .command('status')
   .description('show current status details')
+  .option(ipFlag, ipDesc, ipDefault)
   .action(Nodecopter.status)
 
 program
   .command('telnet')
   .description('connect directly to the nodecopter')
+  .option(ipFlag, ipDesc, ipDefault)
   .action(Nodecopter.telnet)
 
 program
   .command('trim')
   .description('flatten trim')
+  .option(ipFlag, ipDesc, ipDefault)
   .action(Nodecopter.trim)
 
 program.parse(process.argv)
