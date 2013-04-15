@@ -35,7 +35,9 @@ var Nodecopter = {
     client.createRepl();
   },
   reset: function(options){
-    console.log('reset')
+    var client = Nodecopter.createClient(options);
+    console.log('Resetting...')
+    client.disableEmergency()
   },
   status: function(options){
     console.log('status')
