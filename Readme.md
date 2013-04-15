@@ -24,7 +24,7 @@ A Command line utility for nodecopter
 ## Development
 
 Source hosted at [GitHub](http://github.com/andrew/nodecopter).
-Report Issues/Feature requests on [GitHub Issues](http://github.com/andrew/split/nodecopter).
+Report Issues/Feature requests on [GitHub Issues](http://github.com/andrew/nodecopter).
 
 ### Note on Patches/Pull Requests
 
