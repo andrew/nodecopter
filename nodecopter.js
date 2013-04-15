@@ -24,6 +24,12 @@ var Nodecopter = {
   },
   land: function(options){
     console.log('land')
+    var client = Nodecopter.createClient(options);
+    client.land()
+    console.log('Landing...')
+    setTimeout(function(){
+      process.exit()
+    },2000)
   },
   repl: function(options){
     console.log('repl')
