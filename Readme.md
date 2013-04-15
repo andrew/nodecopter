@@ -21,6 +21,23 @@ A Command line utility for nodecopter
     $ nodecopter telnet
     $ nodecopter trim
 
+## Config files
+
+You can store config for passing to the `nodecopter` command in a nodecopter.json file.
+
+When the `nodecopter` command is ran it looks in the following places for config:
+
+* commandline arguments
+* a nodecopter.json in the current directory
+* a nodecopter.json in your home directory
+* or falls back to default.json in the module
+
+An example of nodecopter.json:
+
+    {
+      "ip": "192.168.1.2"
+    }
+
 ## Development
 
 Source hosted at [GitHub](http://github.com/andrew/nodecopter).
