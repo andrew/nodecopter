@@ -10,24 +10,25 @@ var Nodecopter = {
   defaultIP: constants.DEFAULT_DRONE_IP,
   demo: function(options){
     var client = Nodecopter.createClient(options);
-    client.takeoff();
-
-    client
-      .after(5000, function() {
-        this.clockwise(0.5);
-      })
-      .after(3000, function() {
-        this.stop();
-        this.land();
-      });
+    client.takeoff(function(){
+      client
+        .after(5000, function() {
+          this.clockwise(0.5);
+        })
+        .after(3000, function() {
+          this.stop();
+          this.land(function(){
+            process.exit()
+          });
+        });
+    });
   },
   land: function(options){
     var client = Nodecopter.createClient(options);
-    client.land()
-    console.log('Landing...')
-    setTimeout(function(){
+    client.land(function(){
       process.exit()
-    },2000)
+    })
+    console.log('Landing...')
   },
   repl: function(options){
     var client = Nodecopter.createClient(options);
