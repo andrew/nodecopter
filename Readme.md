@@ -1,4 +1,4 @@
-# Nodecopter
+# [Nodecopter](http://libraries.io/npm/nodecopter)
 
 A Command line utility for nodecopter
 
